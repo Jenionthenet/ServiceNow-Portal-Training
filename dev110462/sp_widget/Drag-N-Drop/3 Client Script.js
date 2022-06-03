@@ -9,22 +9,32 @@ api.controller = function ($scope) {
 		$scope.modelAsJson = angular.toJson(model, true);
 	}, true);
 
-	$scope.changedValue = function (indexValue, array) {
-		for (var i = 0; i < array.lenght; i++) {
-			for (var j = 0; j < array[i].records.length; j++) {
-				if (array[i].records[j].id == indexValue) {
-					c.data.state = array[i].value;
-				}
-			}
+
+	//call server update to change item's state
+	updateState = function (item, state) {
+		if (item.state_value == state.value) {
+			return;
 		}
-		console.log("Changed Value- " + c.data.state);
-		c.data.changedID = indexValue;
-		c.data.state = state;
-		c.data.action = "update";
-		c.server.update().then(function (r) {
+		c.data.action = "updateState";
+		c.data.sys_id = item.id;
+		c.data.new_state = state.value;
+		c.server.update().then(function () {
 			c.data.action = undefined;
+		})
+	}
+
+	$scope.onDrop = function (state, items, index) {
+		angular.forEach(items, function (item) {
+			item.selected = false;
 		});
-	};
+		state.records = state.records.slice(0, index)
+			.concat(items)
+			.concat(state.records.slice(index));
 
+		//calling function to update server-side
+		updateState(items, state);
+		return true;
+	}
 
+	//testing
 };

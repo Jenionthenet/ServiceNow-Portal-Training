@@ -6,8 +6,8 @@
     },
     "action": "saveWidget",
     "tableName": "sp_widget",
-    "name": "Drag-N-Drop",
-    "sys_id": "d00895bf87a305108025986d3fbb3507",
+    "name": "incident filter test",
+    "sys_id": "609f2616877b05108025986d3fbb35d8",
     "widget": {
         "template": {
             "sys_mandatory": false,
@@ -17,13 +17,13 @@
             "sys_readonly": false,
             "type": "html_template",
             "mandatory": false,
-            "displayValue": "<div class=\"container\">\n\t<div class=\"simpleDemo row\">\n\t\t<div class=\"col-md-8\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div ng-repeat=\"state in c.data.state_array\" class=\"col-md-6\">\n\t\t\t\t\t<div class=\"panel panel-info\">\n\t\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t\t\t<div class=\"btn-group pull-right\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<h3 class=\"panel-title\">State: {{state.label}}</h3>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t\t<ul dnd-list=\"state.records\" class=\"ng-scope\" data-label=\"{{state.label}}\" dnd-drop=\"onDrop(list, item, index)\">\n\t\t\t\t\t\t\t\t<li ng-repeat=\"i in state.records | limitTo: 5\"\n\t\t\t\t\t\t\t\tdnd-draggable=\"i\"\n\t\t\t\t\t\t\t\tdnd-moved=\"state.records.splice($index, 1)\"\n\t\t\t\t\t\t\t\tdnd-effect-allowed=\"move\"\n\t\t\t\t\t\t\t\tdnd-selected=\"models.selected = i\"\n\t\t\t\t\t\t\t\tng-class=\"{'selected': models.selected === i}\"\n\t\t\t\t\t\t\t\tdraggable=\"true\">\n\t\t\t\t\t\t\t\t{{i.number}}\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n<pre>{{c.data.state_array | json}}</pre>",
+            "displayValue": "<div>\r<!-- your widget template -->\r</div>",
             "readonly": false,
             "hint": "",
             "name": "template",
             "attributes": {},
             "choice": 0,
-            "value": "<div class=\"container\">\n\t<div class=\"simpleDemo row\">\n\t\t<div class=\"col-md-8\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div ng-repeat=\"state in c.data.state_array\" class=\"col-md-6\">\n\t\t\t\t\t<div class=\"panel panel-info\">\n\t\t\t\t\t\t<div class=\"panel-heading\">\n\t\t\t\t\t\t\t<div class=\"btn-group pull-right\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<h3 class=\"panel-title\">State: {{state.label}}</h3>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t\t\t<ul dnd-list=\"state.records\" class=\"ng-scope\" data-label=\"{{state.label}}\" dnd-drop=\"onDrop(list, item, index)\">\n\t\t\t\t\t\t\t\t<li ng-repeat=\"i in state.records | limitTo: 5\"\n\t\t\t\t\t\t\t\tdnd-draggable=\"i\"\n\t\t\t\t\t\t\t\tdnd-moved=\"state.records.splice($index, 1)\"\n\t\t\t\t\t\t\t\tdnd-effect-allowed=\"move\"\n\t\t\t\t\t\t\t\tdnd-selected=\"models.selected = i\"\n\t\t\t\t\t\t\t\tng-class=\"{'selected': models.selected === i}\"\n\t\t\t\t\t\t\t\tdraggable=\"true\">\n\t\t\t\t\t\t\t\t{{i.number}}\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n<pre>{{c.data.state_array | json}}</pre>",
+            "value": "<div>\r<!-- your widget template -->\r</div>",
             "max_length": 65000,
             "ed": {
                 "name": "template"
@@ -37,13 +37,13 @@
             "sys_readonly": false,
             "type": "css",
             "mandatory": false,
-            "displayValue": "/**\r\n* The dnd-list should always have a min-height,\r\n* otherwise you can't drop to it once it's empty\r\n*/\r\n.simpleDemo ul[dnd-list] {\r\n\tmin-height: 42px;\r\n\tpadding-left: 0px;\r\n}/**\r\n* The dndDraggingSource class will be applied to\r\n* the source element of a drag operation. It makes\r\n* sense to hide it to give the user the feeling\r\n* that he's actually moving it.\r\n*/\r\n.simpleDemo ul[dnd-list] .dndDraggingSource {\r\n\tdisplay: none;\r\n}/**\r\n* An element with .dndPlaceholder class will be\r\n* added to the dnd-list while the user is dragging\r\n* over it.\r\n*/\r\n.simpleDemo ul[dnd-list] .dndPlaceholder {\r\n\tbackground-color: #ddd;\r\n\tdisplay: block;\r\n\tmin-height: 42px;\r\n}\r\n.simpleDemo ul[dnd-list] li {\r\n\tbackground-color: #fff;\r\n\tborder: 1px solid #ddd;\r\n\tborder-top-right-radius: 4px;\r\n\tborder-top-left-radius: 4px;\r\n\tdisplay: block;\r\n\tpadding: 10px 15px;\r\n\tmargin-bottom: -1px;\r\n}/**\r\n* Show selected elements in green\r\n*/\r\n.simpleDemo ul[dnd-list] li.selected {\r\n\tbackground-color: #dff0d8;\r\n\tcolor: #3c763d;\r\n}",
+            "displayValue": "",
             "readonly": false,
             "hint": "",
             "name": "css",
             "attributes": {},
             "choice": 0,
-            "value": "/**\r\n* The dnd-list should always have a min-height,\r\n* otherwise you can't drop to it once it's empty\r\n*/\r\n.simpleDemo ul[dnd-list] {\r\n\tmin-height: 42px;\r\n\tpadding-left: 0px;\r\n}/**\r\n* The dndDraggingSource class will be applied to\r\n* the source element of a drag operation. It makes\r\n* sense to hide it to give the user the feeling\r\n* that he's actually moving it.\r\n*/\r\n.simpleDemo ul[dnd-list] .dndDraggingSource {\r\n\tdisplay: none;\r\n}/**\r\n* An element with .dndPlaceholder class will be\r\n* added to the dnd-list while the user is dragging\r\n* over it.\r\n*/\r\n.simpleDemo ul[dnd-list] .dndPlaceholder {\r\n\tbackground-color: #ddd;\r\n\tdisplay: block;\r\n\tmin-height: 42px;\r\n}\r\n.simpleDemo ul[dnd-list] li {\r\n\tbackground-color: #fff;\r\n\tborder: 1px solid #ddd;\r\n\tborder-top-right-radius: 4px;\r\n\tborder-top-left-radius: 4px;\r\n\tdisplay: block;\r\n\tpadding: 10px 15px;\r\n\tmargin-bottom: -1px;\r\n}/**\r\n* Show selected elements in green\r\n*/\r\n.simpleDemo ul[dnd-list] li.selected {\r\n\tbackground-color: #dff0d8;\r\n\tcolor: #3c763d;\r\n}",
+            "value": "",
             "max_length": 8000,
             "ed": {
                 "name": "css"
@@ -81,7 +81,7 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "function link(scope, element, attrs, controller) {\r\n  \r\n}",
+            "displayValue": "function link(scope, element, attrs, controller) {\r  \r}",
             "readonly": false,
             "hint": "",
             "name": "link",
@@ -89,7 +89,7 @@
                 "client_script": "true"
             },
             "choice": 0,
-            "value": "function link(scope, element, attrs, controller) {\r\n  \r\n}",
+            "value": "function link(scope, element, attrs, controller) {\r  \r}",
             "max_length": 65000,
             "ed": {
                 "name": "link"
@@ -145,13 +145,13 @@
             "sys_readonly": false,
             "type": "json",
             "mandatory": false,
-            "displayValue": "[{\"hint\":\"Enter the table name you want to query and gather the states for.\",\"name\":\"table\",\"section\":\"other\",\"default_value\":\"incident\",\"label\":\"Table\",\"type\":\"string\"}]",
+            "displayValue": "",
             "readonly": false,
             "hint": "",
             "name": "option_schema",
             "attributes": {},
             "choice": 0,
-            "value": "[{\"hint\":\"Enter the table name you want to query and gather the states for.\",\"name\":\"table\",\"section\":\"other\",\"default_value\":\"incident\",\"label\":\"Table\",\"type\":\"string\"}]",
+            "value": "",
             "max_length": 8000,
             "ed": {
                 "name": "option_schema"
@@ -165,13 +165,13 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "(function() {\n    \n\t\tdata.state_array = [];\n\t\t//gatherRecords();\n\t\n\tif(!input) {\n\t\tgatherStateChoices();\n\t}\n\t\t\n\tif(input && input.action == \"updateState\") {\n\t\tupdateRecord();\n\t}\n\t\n\t\tfunction gatherRecords(state) {\n\t\t\tvar array = [];\n\t\t\tvar gr = new GlideRecord(options.table);\n    gr.addQuery(\"active\", true);\n\t\tgr.addQuery(\"state\", state);\n    gr.query();\n    while (gr.next()) {\n    var obj ={\n    id: gr.sys_id.toString(),\n    number: gr.number.getDisplayValue(),\n    state: gr.state.getDisplayValue()\n    };\n    array.push(obj);\n    }\n\t\treturn array;\n  \n\t\t}\n    \n\t\tfunction gatherStateChoices() {\n\t\t\tvar gr = new GlideRecord('sys_choice');\n\t\t\tgr.addEncodedQuery('name=' + options.table + '^element=state');\n\t\t\tgr.query();\n\t\t\twhile(gr.next()) {\n\t\t\t\tvar obj = {\n\t\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\t\tlabel: gr.label.toString(),\n\t\t\t\t\tvalue: gr.value.toString(),\n\t\t\t\t\trecords: gatherRecords(gr.value.toString())\n\t\t\t\t\t\n\t\t\t\t};\n\t\t\t\tdata.state_array.push(obj);\n\t\t\t\t\n\t\t\t}\n\t\t}\n\t\n\t\tfunction updateRecord() {\n\t\t\tvar gr = new GlideRecord(options.table);\n\t\t\tgr.addQuery(\"sys_id\", input.changedID);\n\t\t\tgr.query();\n\t\t\twhile(gr.next()) {\n\t\t\t\tgr.state = input.state;\n\t\t\t\tgr.update();\n\t\t\t}\n\t\t}\n\n\n})();",
+            "displayValue": "(function() {\r  /* populate the 'data' object */\r  /* e.g., data.table = $sp.getValue('table'); */\r\r})();",
             "readonly": false,
             "hint": "",
             "name": "script",
             "attributes": {},
             "choice": 0,
-            "value": "(function() {\n    \n\t\tdata.state_array = [];\n\t\t//gatherRecords();\n\t\n\tif(!input) {\n\t\tgatherStateChoices();\n\t}\n\t\t\n\tif(input && input.action == \"updateState\") {\n\t\tupdateRecord();\n\t}\n\t\n\t\tfunction gatherRecords(state) {\n\t\t\tvar array = [];\n\t\t\tvar gr = new GlideRecord(options.table);\n    gr.addQuery(\"active\", true);\n\t\tgr.addQuery(\"state\", state);\n    gr.query();\n    while (gr.next()) {\n    var obj ={\n    id: gr.sys_id.toString(),\n    number: gr.number.getDisplayValue(),\n    state: gr.state.getDisplayValue()\n    };\n    array.push(obj);\n    }\n\t\treturn array;\n  \n\t\t}\n    \n\t\tfunction gatherStateChoices() {\n\t\t\tvar gr = new GlideRecord('sys_choice');\n\t\t\tgr.addEncodedQuery('name=' + options.table + '^element=state');\n\t\t\tgr.query();\n\t\t\twhile(gr.next()) {\n\t\t\t\tvar obj = {\n\t\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\t\tlabel: gr.label.toString(),\n\t\t\t\t\tvalue: gr.value.toString(),\n\t\t\t\t\trecords: gatherRecords(gr.value.toString())\n\t\t\t\t\t\n\t\t\t\t};\n\t\t\t\tdata.state_array.push(obj);\n\t\t\t\t\n\t\t\t}\n\t\t}\n\t\n\t\tfunction updateRecord() {\n\t\t\tvar gr = new GlideRecord(options.table);\n\t\t\tgr.addQuery(\"sys_id\", input.changedID);\n\t\t\tgr.query();\n\t\t\twhile(gr.next()) {\n\t\t\t\tgr.state = input.state;\n\t\t\t\tgr.update();\n\t\t\t}\n\t\t}\n\n\n})();",
+            "value": "(function() {\r  /* populate the 'data' object */\r  /* e.g., data.table = $sp.getValue('table'); */\r\r})();",
             "max_length": 65000,
             "ed": {
                 "name": "script"
@@ -260,7 +260,7 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "api.controller = function ($scope) {\r\n\t/* widget controller */\r\n\tvar c = this;\r\n\t$scope.models = {\r\n\t\tselected: null,\r\n\t\tlists: c.data.state_array\r\n\t};\r\n\t$scope.$watch('models', function (model) {\r\n\t\t$scope.modelAsJson = angular.toJson(model, true);\r\n\t}, true);\r\n\r\n\r\n\t//call server update to change item's state\r\n\tupdateState = function (item, list) {\r\n\t\tif (item.state_value == list.value) {\r\n\t\t\treturn;\r\n\t\t}\r\n\t\tc.data.action = \"updateState\";\r\n\t\tc.data.sys_id = item.sys_id;\r\n\t\tc.data.new_state = list.value;\r\n\t\tc.server.update().then(function () {\r\n\t\t\tc.data.action = undefined;\r\n\t\t})\r\n\t}\r\n\r\n\t$scope.onDrop = function (list, items, index) {\r\n\t\tangular.forEach(items, function (item) {\r\n\t\t\titem.selected = false;\r\n\t\t});\r\n\t\tlist.records = list.records.slice(0, index)\r\n\t\t\t.concat(items)\r\n\t\t\t.concat(list.records.slice(index));\r\n\r\n\t\t//calling function to update server-side\r\n\t\tupdateState(items, list);\r\n\t\treturn true;\r\n\t}\r\n\r\n\t//testing\r\n};",
+            "displayValue": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
             "readonly": false,
             "hint": "",
             "name": "client_script",
@@ -268,7 +268,7 @@
                 "client_script": "true"
             },
             "choice": 0,
-            "value": "api.controller = function ($scope) {\r\n\t/* widget controller */\r\n\tvar c = this;\r\n\t$scope.models = {\r\n\t\tselected: null,\r\n\t\tlists: c.data.state_array\r\n\t};\r\n\t$scope.$watch('models', function (model) {\r\n\t\t$scope.modelAsJson = angular.toJson(model, true);\r\n\t}, true);\r\n\r\n\r\n\t//call server update to change item's state\r\n\tupdateState = function (item, list) {\r\n\t\tif (item.state_value == list.value) {\r\n\t\t\treturn;\r\n\t\t}\r\n\t\tc.data.action = \"updateState\";\r\n\t\tc.data.sys_id = item.sys_id;\r\n\t\tc.data.new_state = list.value;\r\n\t\tc.server.update().then(function () {\r\n\t\t\tc.data.action = undefined;\r\n\t\t})\r\n\t}\r\n\r\n\t$scope.onDrop = function (list, items, index) {\r\n\t\tangular.forEach(items, function (item) {\r\n\t\t\titem.selected = false;\r\n\t\t});\r\n\t\tlist.records = list.records.slice(0, index)\r\n\t\t\t.concat(items)\r\n\t\t\t.concat(list.records.slice(index));\r\n\r\n\t\t//calling function to update server-side\r\n\t\tupdateState(items, list);\r\n\t\treturn true;\r\n\t}\r\n\r\n\t//testing\r\n};",
+            "value": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
             "max_length": 8000,
             "ed": {
                 "name": "client_script"
@@ -307,13 +307,13 @@
             "sys_readonly": false,
             "type": "translated_field",
             "mandatory": true,
-            "displayValue": "Drag-N-Drop",
+            "displayValue": "incident filter test",
             "readonly": false,
             "hint": "",
             "name": "name",
             "attributes": {},
             "choice": 0,
-            "value": "Drag-N-Drop",
+            "value": "incident filter test",
             "max_length": 40,
             "ed": {
                 "name": "name"
@@ -361,7 +361,7 @@
             "sys_readonly": false,
             "type": "string",
             "mandatory": false,
-            "displayValue": "",
+            "displayValue": "incident_filter_test",
             "readonly": false,
             "hint": "Identifier for $sp.embedWidget()",
             "name": "id",
@@ -369,7 +369,7 @@
                 "edge_encryption_enabled": "true"
             },
             "choice": 0,
-            "value": "",
+            "value": "incident_filter_test",
             "max_length": 40,
             "ed": {
                 "name": "id"
