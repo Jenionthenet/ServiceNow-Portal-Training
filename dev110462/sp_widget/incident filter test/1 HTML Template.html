@@ -1,1 +1,64 @@
-<div><!-- your widget template --></div>
+<div class="panel panel primary">
+
+  <div class="panel-body">
+    <!--<div class="dropdown-->
+    <div class="form-group">
+      <label>Search All:</label> <input type="text" class="form-control" placeholder="Search incident"
+        ng-model="query.$" /><br>
+      <label>Number:</label> <input type="text" class="form-control" placeholder="Search incident number"
+        ng-model="query.number" /><br>
+
+      <!--------------test----------->
+      <div class="form-group">
+        <label for="State">State</label>
+        <select id="state" class="form-control" ng-model="query.state">
+          <option value="">Select a state</option>
+          <option value="New">New</option>
+          <option value="In Progress">In Progress</option>
+          <option value="On Hold">On Hold</option>
+          <option value="Resolved">Resolved</option>
+          <option value="Closed">Closed</option>
+          <option value="Canceled">Canceled</option>
+        </select>
+      </div>
+      <!-------------test----------->
+      <!--------------test II----------->
+      <div class="btn-group form-group">
+        <button type="button" class="btn btn-primary">Choose a State</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu form-control" id="state" ng-model="query.state">
+          <li><a href="#" value="New">New</a></li>
+          <li><a href="#" value="In Progress">In Progress</a></li>
+          <li><a href="#">On Hold</a></li>
+          <li><a href="#">Resolved</a></li>
+          <li><a href="#">Closed</a></li>
+          <li><a href="#">Canceled</a></li>
+        </ul>
+      </div>
+      <br>
+
+      <!--------------test II----------->
+
+      <!---<label>State:</label> <input type="text" class="form-control" placeholder="Search incident state"
+        ng-model="query.state" /><br> --->
+      <label>Short Description:</label> <input type="text" class="form-control"
+        placeholder="Search incident short description" ng-model="query.short_description" />
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title panel-primary">
+        Incidents</h3>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="i in c.data.array | filter: query">
+        <strong>Number:</strong> {{i.number}}
+        <strong class="space">State:</strong> {{i.state}}
+        <strong class="space">Short Description:</strong> {{i.short_description}}
+      </li>
+    </ul>
+
+  </div>
+</div>

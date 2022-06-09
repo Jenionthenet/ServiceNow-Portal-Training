@@ -1,0 +1,22 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!---<a ng-repeat="i in c.data.array" {{i.link}}="2" ? ng-href="{{i.externalURL}}" : ng-href="/sp?id=" +
+    {{i.page}}>{{i.name}}</a> -->
+  <!--- <a ng-repeat="i in c.data.array" {{i.link}}="2" ? ng-href="{{i.externalURL}}" : ng-click="openPortalPage()">{{i.name}} 
+  </a> --->
+
+  <a ng-repeat="i in c.data.array" ng-click="followLink(i.link, i.page, i.externalURL, i.serPortURL)">
+    <img ng-src="{{i.icon}}"> {{i.name}}</a>
+  <!--- need to change icon to images--->
+
+</div>
+
+<div id="main">
+  <!---- <h2>Sidenav Push Example</h2>
+  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p> --->
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<pre>{{c.data.array | json}}</pre>

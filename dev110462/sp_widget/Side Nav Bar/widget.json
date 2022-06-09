@@ -6,8 +6,8 @@
     },
     "action": "saveWidget",
     "tableName": "sp_widget",
-    "name": "incident filter test",
-    "sys_id": "609f2616877b05108025986d3fbb35d8",
+    "name": "Side Nav bar",
+    "sys_id": "5bddd36e873b45108025986d3fbb35e6",
     "widget": {
         "template": {
             "sys_mandatory": false,
@@ -17,13 +17,13 @@
             "sys_readonly": false,
             "type": "html_template",
             "mandatory": false,
-            "displayValue": "<div class=\"panel panel primary\">\n\t<div class=\"panel-heading\">\n    \t<h3 class=\"panel-title panel-primary\">\n        Incidents</h3>\n   </div>\n  <div class=\"panel-body\">\n    <!--<div class=\"dropdown-->\n    <div class=\"form-group\">\n        <label>Search All:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident\"\n             ng-model=\"query.$\" /><br>\n   \t\t\t<label>Number:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident number\"\n             ng-model=\"query.number\" /><br>\n      \n      <!--------------test----------->\n      \n      <label class=\"control-label\" for=\"state\">Filter by State: </label>\n      \t<div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary\"\n      </div>\n       <!--------------test----------->\n       \t<label>State:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident state\"\n             ng-model=\"query.state\" /><br>\n    \t\t<lable>Short Description:</lable>  <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident short description\"\n             ng-model=\"query.short_description\" />\n    </div>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"ng-repeat= \"i in c.data.array | filter: query\" >\n        <strong>Number:</strong> {{i.number}}\n        <strong class=\"space\">State:</strong> {{i.state}}\n        <strong class=\"space\">Short Description:</strong> {{i.short_description}}\n      </li>\n    </ul>\n    \n  </div>\n</div>",
+            "displayValue": "<div>\r<!-- your widget template -->\r</div>",
             "readonly": false,
             "hint": "",
             "name": "template",
             "attributes": {},
             "choice": 0,
-            "value": "<div class=\"panel panel primary\">\n\t<div class=\"panel-heading\">\n    \t<h3 class=\"panel-title panel-primary\">\n        Incidents</h3>\n   </div>\n  <div class=\"panel-body\">\n    <!--<div class=\"dropdown-->\n    <div class=\"form-group\">\n        <label>Search All:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident\"\n             ng-model=\"query.$\" /><br>\n   \t\t\t<label>Number:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident number\"\n             ng-model=\"query.number\" /><br>\n      \n      <!--------------test----------->\n      \n      <label class=\"control-label\" for=\"state\">Filter by State: </label>\n      \t<div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary\"\n      </div>\n       <!--------------test----------->\n       \t<label>State:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident state\"\n             ng-model=\"query.state\" /><br>\n    \t\t<lable>Short Description:</lable>  <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident short description\"\n             ng-model=\"query.short_description\" />\n    </div>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"ng-repeat= \"i in c.data.array | filter: query\" >\n        <strong>Number:</strong> {{i.number}}\n        <strong class=\"space\">State:</strong> {{i.state}}\n        <strong class=\"space\">Short Description:</strong> {{i.short_description}}\n      </li>\n    </ul>\n    \n  </div>\n</div>",
+            "value": "<div>\r<!-- your widget template -->\r</div>",
             "max_length": 65000,
             "ed": {
                 "name": "template"
@@ -37,13 +37,13 @@
             "sys_readonly": false,
             "type": "css",
             "mandatory": false,
-            "displayValue": ".space {\n  margin-left: 20px\n}",
+            "displayValue": "",
             "readonly": false,
             "hint": "",
             "name": "css",
             "attributes": {},
             "choice": 0,
-            "value": ".space {\n  margin-left: 20px\n}",
+            "value": "",
             "max_length": 8000,
             "ed": {
                 "name": "css"
@@ -165,13 +165,13 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "(function() {\n  \n\t\n\tdata.array = [];\n\tgetIncidents();\n\t\n\tfunction getIncidents() {\n\t\tvar gr = new GlideRecord('incident');\n\t\tgr.setLimit(20);\n\t\tgr.orderByDesc(\"sys_created_on\")\n\t\tgr.addQuery(\"active\", true);\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tvar obj = {\n\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\tnumber: gr.number.toString(),\n\t\t\t\tstate:gr.state.getDisplayValue(),\n\t\t\t\tshort_description: gr.short_description.toString()\n\t\t\t};\n\t\t\tdata.array.push(obj);\n\t\t}\n\t}\n\n})();",
+            "displayValue": "(function() {\r  /* populate the 'data' object */\r  /* e.g., data.table = $sp.getValue('table'); */\r\r})();",
             "readonly": false,
             "hint": "",
             "name": "script",
             "attributes": {},
             "choice": 0,
-            "value": "(function() {\n  \n\t\n\tdata.array = [];\n\tgetIncidents();\n\t\n\tfunction getIncidents() {\n\t\tvar gr = new GlideRecord('incident');\n\t\tgr.setLimit(20);\n\t\tgr.orderByDesc(\"sys_created_on\")\n\t\tgr.addQuery(\"active\", true);\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tvar obj = {\n\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\tnumber: gr.number.toString(),\n\t\t\t\tstate:gr.state.getDisplayValue(),\n\t\t\t\tshort_description: gr.short_description.toString()\n\t\t\t};\n\t\t\tdata.array.push(obj);\n\t\t}\n\t}\n\n})();",
+            "value": "(function() {\r  /* populate the 'data' object */\r  /* e.g., data.table = $sp.getValue('table'); */\r\r})();",
             "max_length": 65000,
             "ed": {
                 "name": "script"
@@ -185,13 +185,13 @@
             "sys_readonly": false,
             "type": "boolean",
             "mandatory": false,
-            "displayValue": "true",
+            "displayValue": "false",
             "readonly": false,
             "hint": "Defines whether preview data is available",
             "name": "has_preview",
             "attributes": {},
             "choice": 0,
-            "value": "true",
+            "value": "false",
             "max_length": 40,
             "ed": {
                 "name": "has_preview"
@@ -260,7 +260,7 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "api.controller=function($scope) {\n  /* widget controller */\n  var c = this;\n\t//c.query.keyword = '';\n\t//c.query.secondFilter = '';\n\t\n};",
+            "displayValue": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
             "readonly": false,
             "hint": "",
             "name": "client_script",
@@ -268,7 +268,7 @@
                 "client_script": "true"
             },
             "choice": 0,
-            "value": "api.controller=function($scope) {\n  /* widget controller */\n  var c = this;\n\t//c.query.keyword = '';\n\t//c.query.secondFilter = '';\n\t\n};",
+            "value": "api.controller=function() {\r  /* widget controller */\r  var c = this;\r};",
             "max_length": 8000,
             "ed": {
                 "name": "client_script"
@@ -307,13 +307,13 @@
             "sys_readonly": false,
             "type": "translated_field",
             "mandatory": true,
-            "displayValue": "incident filter test",
+            "displayValue": "Side Nav bar",
             "readonly": false,
             "hint": "",
             "name": "name",
             "attributes": {},
             "choice": 0,
-            "value": "incident filter test",
+            "value": "Side Nav bar",
             "max_length": 40,
             "ed": {
                 "name": "name"
@@ -361,7 +361,7 @@
             "sys_readonly": false,
             "type": "string",
             "mandatory": false,
-            "displayValue": "incident_filter_test",
+            "displayValue": "side_nav_bar",
             "readonly": false,
             "hint": "Identifier for $sp.embedWidget()",
             "name": "id",
@@ -369,7 +369,7 @@
                 "edge_encryption_enabled": "true"
             },
             "choice": 0,
-            "value": "incident_filter_test",
+            "value": "side_nav_bar",
             "max_length": 40,
             "ed": {
                 "name": "id"

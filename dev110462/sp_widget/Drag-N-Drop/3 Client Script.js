@@ -36,5 +36,5 @@ api.controller = function ($scope) {
 		return true;
 	}
 
-	//testing
+
 };

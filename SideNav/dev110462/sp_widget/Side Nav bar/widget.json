@@ -2,12 +2,12 @@
     "instance": {
         "name": "dev110462",
         "url": "https://dev110462.service-now.com",
-        "g_ck": "fc69ea6287b745108025986d3fbb35c5a18bb71a9dd9f3b313becf841cde1df27253357b"
+        "g_ck": "b8768667877f01108025986d3fbb351b066d1ebdfd92479a9fafe50b5861bf4f5f93cfc2"
     },
     "action": "saveWidget",
     "tableName": "sp_widget",
-    "name": "incident filter test",
-    "sys_id": "609f2616877b05108025986d3fbb35d8",
+    "name": "Side Nav bar",
+    "sys_id": "5bddd36e873b45108025986d3fbb35e6",
     "widget": {
         "template": {
             "sys_mandatory": false,
@@ -17,13 +17,13 @@
             "sys_readonly": false,
             "type": "html_template",
             "mandatory": false,
-            "displayValue": "<div class=\"panel panel primary\">\n\t<div class=\"panel-heading\">\n    \t<h3 class=\"panel-title panel-primary\">\n        Incidents</h3>\n   </div>\n  <div class=\"panel-body\">\n    <!--<div class=\"dropdown-->\n    <div class=\"form-group\">\n        <label>Search All:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident\"\n             ng-model=\"query.$\" /><br>\n   \t\t\t<label>Number:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident number\"\n             ng-model=\"query.number\" /><br>\n      \n      <!--------------test----------->\n      \n      <label class=\"control-label\" for=\"state\">Filter by State: </label>\n      \t<div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary\"\n      </div>\n       <!--------------test----------->\n       \t<label>State:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident state\"\n             ng-model=\"query.state\" /><br>\n    \t\t<lable>Short Description:</lable>  <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident short description\"\n             ng-model=\"query.short_description\" />\n    </div>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"ng-repeat= \"i in c.data.array | filter: query\" >\n        <strong>Number:</strong> {{i.number}}\n        <strong class=\"space\">State:</strong> {{i.state}}\n        <strong class=\"space\">Short Description:</strong> {{i.short_description}}\n      </li>\n    </ul>\n    \n  </div>\n</div>",
+            "displayValue": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<div id=\"mySidenav\" class=\"sidenav\">\n  <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>\n  <a ng-repeat=\"i in c.data.array\" {{i.link}}=\"page\" ?  href=\"{{i.page}} \" : href=\"{{i.externalURL}}\" >{{i.name}} </a>\n  <!--- need to change icon to images--->\n\n</div>\n\n<div id=\"main\">\n  <h2>Sidenav Push Example</h2>\n  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>\n  <span style=\"font-size:30px;cursor:pointer\" onclick=\"openNav()\">&#9776; open</span>\n</div>",
             "readonly": false,
             "hint": "",
             "name": "template",
             "attributes": {},
             "choice": 0,
-            "value": "<div class=\"panel panel primary\">\n\t<div class=\"panel-heading\">\n    \t<h3 class=\"panel-title panel-primary\">\n        Incidents</h3>\n   </div>\n  <div class=\"panel-body\">\n    <!--<div class=\"dropdown-->\n    <div class=\"form-group\">\n        <label>Search All:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident\"\n             ng-model=\"query.$\" /><br>\n   \t\t\t<label>Number:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident number\"\n             ng-model=\"query.number\" /><br>\n      \n      <!--------------test----------->\n      \n      <label class=\"control-label\" for=\"state\">Filter by State: </label>\n      \t<div class=\"btn-group\">\n          <button type=\"button\" class=\"btn btn-primary\"\n      </div>\n       <!--------------test----------->\n       \t<label>State:</label>   <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident state\"\n             ng-model=\"query.state\" /><br>\n    \t\t<lable>Short Description:</lable>  <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search incident short description\"\n             ng-model=\"query.short_description\" />\n    </div>\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\"ng-repeat= \"i in c.data.array | filter: query\" >\n        <strong>Number:</strong> {{i.number}}\n        <strong class=\"space\">State:</strong> {{i.state}}\n        <strong class=\"space\">Short Description:</strong> {{i.short_description}}\n      </li>\n    </ul>\n    \n  </div>\n</div>",
+            "value": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<div id=\"mySidenav\" class=\"sidenav\">\n  <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>\n  <a ng-repeat=\"i in c.data.array\" {{i.link}}=\"page\" ?  href=\"{{i.page}} \" : href=\"{{i.externalURL}}\" >{{i.name}} </a>\n  <!--- need to change icon to images--->\n\n</div>\n\n<div id=\"main\">\n  <h2>Sidenav Push Example</h2>\n  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>\n  <span style=\"font-size:30px;cursor:pointer\" onclick=\"openNav()\">&#9776; open</span>\n</div>",
             "max_length": 65000,
             "ed": {
                 "name": "template"
@@ -37,13 +37,13 @@
             "sys_readonly": false,
             "type": "css",
             "mandatory": false,
-            "displayValue": ".space {\n  margin-left: 20px\n}",
+            "displayValue": "body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.sidenav {\n  height: 100%;\n  width: 0;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #111;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n\n.sidenav a {\n  padding: 8px 8px 8px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #818181;\n  display: block;\n  transition: 0.3s;\n}\n\n.sidenav a:hover {\n  color: #f1f1f1;\n}\n\n.sidenav .closebtn {\n  position: absolute;\n  top: 0;\n  right: 25px;\n  font-size: 36px;\n  margin-left: 50px;\n}\n\n#main {\n  transition: margin-left .5s;\n  padding: 16px;\n}\n\n@media screen and (max-height: 450px) {\n  .sidenav {padding-top: 15px;}\n  .sidenav a {font-size: 18px;}\n}",
             "readonly": false,
             "hint": "",
             "name": "css",
             "attributes": {},
             "choice": 0,
-            "value": ".space {\n  margin-left: 20px\n}",
+            "value": "body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.sidenav {\n  height: 100%;\n  width: 0;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background-color: #111;\n  overflow-x: hidden;\n  transition: 0.5s;\n  padding-top: 60px;\n}\n\n.sidenav a {\n  padding: 8px 8px 8px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  color: #818181;\n  display: block;\n  transition: 0.3s;\n}\n\n.sidenav a:hover {\n  color: #f1f1f1;\n}\n\n.sidenav .closebtn {\n  position: absolute;\n  top: 0;\n  right: 25px;\n  font-size: 36px;\n  margin-left: 50px;\n}\n\n#main {\n  transition: margin-left .5s;\n  padding: 16px;\n}\n\n@media screen and (max-height: 450px) {\n  .sidenav {padding-top: 15px;}\n  .sidenav a {font-size: 18px;}\n}",
             "max_length": 8000,
             "ed": {
                 "name": "css"
@@ -165,13 +165,13 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "(function() {\n  \n\t\n\tdata.array = [];\n\tgetIncidents();\n\t\n\tfunction getIncidents() {\n\t\tvar gr = new GlideRecord('incident');\n\t\tgr.setLimit(20);\n\t\tgr.orderByDesc(\"sys_created_on\")\n\t\tgr.addQuery(\"active\", true);\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tvar obj = {\n\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\tnumber: gr.number.toString(),\n\t\t\t\tstate:gr.state.getDisplayValue(),\n\t\t\t\tshort_description: gr.short_description.toString()\n\t\t\t};\n\t\t\tdata.array.push(obj);\n\t\t}\n\t}\n\n})();",
+            "displayValue": "(function() {\n  /* populate the 'data' object */\n  /* e.g., data.table = $sp.getValue('table'); */\n\tdata.array = [];\n\tgatherMenuItems();\n\t\n\tfunction gatherMenuItems() {\n\t\tvar gr = new GlideRecord('u_side_nav_bar_menu_items');\n\t\tgr.addEncodedQuery('u_visible=true');\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tvar obj = {\n\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\tname: gr.u_name.toString(),\n\t\t\t\ticon: gr.u_icon.getDisplayValue(),\n\t\t\t\tlink: gr.u_link.toString(),\n\t\t\t\tpage: gr.u_page.getDisplayValue(),\n\t\t\t\texternalURL: gr.u_external_url.toString()\n\t\t\t\t\n\t\t\t\t\n\t\t\t};\n\t\t\tdata.array.push(obj);\n\t\t}\n\t\t\n\t}\n\t\n})();",
             "readonly": false,
             "hint": "",
             "name": "script",
             "attributes": {},
             "choice": 0,
-            "value": "(function() {\n  \n\t\n\tdata.array = [];\n\tgetIncidents();\n\t\n\tfunction getIncidents() {\n\t\tvar gr = new GlideRecord('incident');\n\t\tgr.setLimit(20);\n\t\tgr.orderByDesc(\"sys_created_on\")\n\t\tgr.addQuery(\"active\", true);\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tvar obj = {\n\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\tnumber: gr.number.toString(),\n\t\t\t\tstate:gr.state.getDisplayValue(),\n\t\t\t\tshort_description: gr.short_description.toString()\n\t\t\t};\n\t\t\tdata.array.push(obj);\n\t\t}\n\t}\n\n})();",
+            "value": "(function() {\n  /* populate the 'data' object */\n  /* e.g., data.table = $sp.getValue('table'); */\n\tdata.array = [];\n\tgatherMenuItems();\n\t\n\tfunction gatherMenuItems() {\n\t\tvar gr = new GlideRecord('u_side_nav_bar_menu_items');\n\t\tgr.addEncodedQuery('u_visible=true');\n\t\tgr.query();\n\t\twhile (gr.next()) {\n\t\t\tvar obj = {\n\t\t\t\tid: gr.sys_id.toString(),\n\t\t\t\tname: gr.u_name.toString(),\n\t\t\t\ticon: gr.u_icon.getDisplayValue(),\n\t\t\t\tlink: gr.u_link.toString(),\n\t\t\t\tpage: gr.u_page.getDisplayValue(),\n\t\t\t\texternalURL: gr.u_external_url.toString()\n\t\t\t\t\n\t\t\t\t\n\t\t\t};\n\t\t\tdata.array.push(obj);\n\t\t}\n\t\t\n\t}\n\t\n})();",
             "max_length": 65000,
             "ed": {
                 "name": "script"
@@ -185,13 +185,13 @@
             "sys_readonly": false,
             "type": "boolean",
             "mandatory": false,
-            "displayValue": "true",
+            "displayValue": "false",
             "readonly": false,
             "hint": "Defines whether preview data is available",
             "name": "has_preview",
             "attributes": {},
             "choice": 0,
-            "value": "true",
+            "value": "false",
             "max_length": 40,
             "ed": {
                 "name": "has_preview"
@@ -260,7 +260,7 @@
             "sys_readonly": false,
             "type": "script",
             "mandatory": false,
-            "displayValue": "api.controller=function($scope) {\n  /* widget controller */\n  var c = this;\n\t//c.query.keyword = '';\n\t//c.query.secondFilter = '';\n\t\n};",
+            "displayValue": "api.controller=function() {\n  /* widget controller */\n  var c = this;\n\t\n\topenNav = function() {\n\t\tdocument.getElementById(\"mySidenav\").style.width = \"250px\";\n  document.getElementById(\"main\").style.marginLeft = \"250px\";\n\t}\n\n\t\n\tcloseNav = function() {\n\t\tdocument.getElementById(\"mySidenav\").style.width = \"0\";\n  document.getElementById(\"main\").style.marginLeft= \"0\";\n\t}\n\n\n};",
             "readonly": false,
             "hint": "",
             "name": "client_script",
@@ -268,7 +268,7 @@
                 "client_script": "true"
             },
             "choice": 0,
-            "value": "api.controller=function($scope) {\n  /* widget controller */\n  var c = this;\n\t//c.query.keyword = '';\n\t//c.query.secondFilter = '';\n\t\n};",
+            "value": "api.controller=function() {\n  /* widget controller */\n  var c = this;\n\t\n\topenNav = function() {\n\t\tdocument.getElementById(\"mySidenav\").style.width = \"250px\";\n  document.getElementById(\"main\").style.marginLeft = \"250px\";\n\t}\n\n\t\n\tcloseNav = function() {\n\t\tdocument.getElementById(\"mySidenav\").style.width = \"0\";\n  document.getElementById(\"main\").style.marginLeft= \"0\";\n\t}\n\n\n};",
             "max_length": 8000,
             "ed": {
                 "name": "client_script"
@@ -307,13 +307,13 @@
             "sys_readonly": false,
             "type": "translated_field",
             "mandatory": true,
-            "displayValue": "incident filter test",
+            "displayValue": "Side Nav bar",
             "readonly": false,
             "hint": "",
             "name": "name",
             "attributes": {},
             "choice": 0,
-            "value": "incident filter test",
+            "value": "Side Nav bar",
             "max_length": 40,
             "ed": {
                 "name": "name"
@@ -361,7 +361,7 @@
             "sys_readonly": false,
             "type": "string",
             "mandatory": false,
-            "displayValue": "incident_filter_test",
+            "displayValue": "side_nav_bar",
             "readonly": false,
             "hint": "Identifier for $sp.embedWidget()",
             "name": "id",
@@ -369,7 +369,7 @@
                 "edge_encryption_enabled": "true"
             },
             "choice": 0,
-            "value": "incident_filter_test",
+            "value": "side_nav_bar",
             "max_length": 40,
             "ed": {
                 "name": "id"

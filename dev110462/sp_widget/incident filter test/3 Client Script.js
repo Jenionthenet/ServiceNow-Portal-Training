@@ -1,1 +1,6 @@
-api.controller=function() {  /* widget controller */  var c = this;};
+api.controller = function ($scope) {
+  /* widget controller */
+  var c = this;
+  //c.query.state = '';
+
+};
