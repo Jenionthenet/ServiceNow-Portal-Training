@@ -1,0 +1,92 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Create an Incident</h4>
+    </div>
+    <div class="panel-body">
+        <form action="" ng-show="PageOne">
+
+            <div class="reference field">
+                <label for="caller">Caller</label>
+                <sn-record-picker field="caller" table="'sys_user'" display-field="'name'" value-field="'sys_id'"
+                    search-fields="'name'" page-size="100">
+                </sn-record-picker>
+            </div>
+
+            <div class="form-group field">
+                <label for="category">Category</label>
+                <!-----  <select ng-options="obj as obj.label for obj in c.data.category_array track by obj.value"-->
+                <select ng-options="cat.label for cat in c.data.category_array" name="category" id="category"
+                    class="form-control" ng-model="c.data.newIncident.category"></select>
+
+            </div>
+
+            <div class="form-group field bottom">
+                <label for="subcategory">Subcategory</label>
+                <select
+                    ng-options="subcat.label for subcat in c.data.subcategory_array | filter:{ dependentValue : c.data.newIncident.category.value}"
+                    name="subcategory" id="subcategory" class="form-control"
+                    ng-model="c.data.newIncident.subcategory"></select>
+
+            </div>
+        </form>
+
+
+        <form action="" ng-show='PageTwo'>
+            <div class="form-group field">
+                <label class="form_label" for="short_description">Issue summary</label>
+                <input type="text" class="form-control" id="short_description"
+                    ng-model="c.data.newIncident.short_description" required />
+            </div>
+
+            <div class="form-group field bottom">
+                <label class="form_label" for="description">Please describe your issue below</label>
+                <input type="text" class="form-control" id="description" ng-model="c.data.newIncident.description"
+                    required />
+            </div>
+
+        </form>
+
+
+        <form ng-show='PageThree'>
+            <div class="reference field">
+                <label for="configuration_item">Configuration Item</label>
+                <sn-record-picker field="cmdb_ci" table="'cmdb_ci'" display-field="'name'" value-field="'sys_id'"
+                    search-fields="'name'" page-size="100"></sn-record-picker>
+            </div>
+
+            <div class="form-group field bottom">
+                <label for="urgency">Urgency</label>
+                <select id="urgency" class="form-control" ng-model='c.data.newIncident.urgency'>
+                    <option value=""></option>
+                    <option value="1">High</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Low</option>
+                </select>
+            </div>
+        </form>
+
+
+    </div>
+
+    <div class="panel-footer text-right">
+
+        <button class="btn btn-success" ng-show='NextOne' ng-click='ShowTwo()'>
+            Next
+        </button>
+        <button class="btn btn-success" ng-show='PrevOne' ng-click='BackToPageOne()'>
+            Previous
+        </button>
+        <button class="btn btn-success left" ng-show='NextTwo' ng-click='ShowThree()'>
+            Next
+        </button>
+        <button class="btn btn-success" ng-show='PrevTwo' ng-click='BackToPageTwo()'>
+            Previous
+        </button>
+
+        <button class="btn btn-success left" ng-show='SubmitBtn' ng-click="submit()">
+            Submit
+        </button>
+    </div>
+</div>
+
+<pre>{{c.data.newIncident | json}}</pre>
