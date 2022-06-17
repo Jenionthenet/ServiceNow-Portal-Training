@@ -1,0 +1,3 @@
+https://dev110462.service-now.com/$sp.do?id=sp-preview&sys_id=5d8abdfe874091108025986d3fbb35f5
+https://dev110462.service-now.com/sp_config?id=user_s_info_w_to_w
+https://dev110462.service-now.com/sp?id=user_s_info_w_to_w

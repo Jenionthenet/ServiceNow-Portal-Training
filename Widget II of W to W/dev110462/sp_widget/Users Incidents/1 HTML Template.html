@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">User's Incidents</h4>
+    </div>
+    <div class="panel-body">
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="i in c.data.array">
+                    <strong>Number:</strong> {{i.number}}
+                    <strong>Caller:</strong> {{i.caller}}
+                    <strong>Short Description:</strong> {{i.short_description}}
+                    <strong>State:</strong> {{i.state}}
+                    <strong>Urgency:</strong> {{i.urgency}}
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>

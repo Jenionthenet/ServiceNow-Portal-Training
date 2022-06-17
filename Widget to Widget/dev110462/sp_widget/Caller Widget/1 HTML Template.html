@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Select A User</h4>
+    </div>
+    <div class="panel-body">
+        <form action="">
+            <div>
+
+                <sn-record-picker field="name" table="'sys_user'" display-field="'name'" value-field="'sys_id'"
+                    search-fields="'name'" page-size="100"></sn-record-picker>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer text-right">
+        <button class="btn btn-primary" ng-click='Submit()'> Submit</button>
+    </div>
+</div>

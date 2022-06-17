@@ -1,0 +1,14 @@
+<div>
+    <img id="appleIcon" ng-src="{{data.productInfo.icon}}">
+    <h1 id="title">{{data.productInfo.title}} </h1>
+    <div>{{data.productInfo.subtitle}} </div>
+    <img ng-src="{{data.productInfo.subtitle_icon}}">
+    <div>{{data.productInfo.subtitle_two}} </div>
+    <div>
+        <span ng-include="data.TemplateTwo"></span>
+
+        <span ng-include="data.Template"></span>
+
+        <img ng-src="{{data.productInfo.under_image}}">
+
+    </div>
