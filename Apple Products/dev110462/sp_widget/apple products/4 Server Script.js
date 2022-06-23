@@ -3,6 +3,7 @@
 
   data.Template = options.template || 'link-buy.html';
   data.TemplateTwo = options.templatetwo;
+  data.BackgroundImageTemplate = options.backgroundimagetemplate || 'No-background-image';
   data.productInfo = {};
   getProductInfo();
 
@@ -28,7 +29,7 @@
 
     }
   }
-  //test
+
 
 
 })();

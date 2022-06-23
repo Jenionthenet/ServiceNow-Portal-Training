@@ -2,3 +2,37 @@ h1 {
     color: black !important;
 
 }
+
+.widget-macbook {
+    margin-top: 30px;
+    background-image: url(MacBook_Air.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 700px;
+    height: 510px;
+}
+
+.widget-mankind {
+    height: 510px;
+    width: 940px;
+    background-image: url(For_All_Man_Kind.jpg);
+    background-size: cover;
+}
+
+
+.sub-icon {
+    height: 40px;
+
+}
+
+.subtitle {
+    color: black;
+}
+
+.subtitleTwo {
+    color: $subtitle-two;
+}
+
+.link {
+    color: $links;
+}
